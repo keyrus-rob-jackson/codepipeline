@@ -10,6 +10,14 @@ RUN apt-get install  php-intl -y
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 RUN . ~/.bashrc ; nvm install 21.2
+
+
+
+SHELL ["/bin/bash", "--login", "-c"]
+CMD [ "echo", "$PATH" ]
+CMD [ "bin/bash" ]
+CMD [ "echo", "$PATH" ]
+RUN ls
 #RUN ~/.bashrc
 #RUN nvm install 21.2
 #RUN ls -al

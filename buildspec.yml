@@ -10,6 +10,8 @@ phases:
       - echo $PATH
       - cat ~/.bashrc
       - source ~/.bashrc
+      - source set_path.sh
+      - ./set_path.sh
       - echo $PATH
       - echo $SHELL
       - whoami
