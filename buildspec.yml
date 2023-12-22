@@ -6,10 +6,9 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Pre Build"
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   install:
-    runtime-versions:
-      nodejs: 21.1 
     commands:
       - composer install
       - npm i
