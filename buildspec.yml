@@ -1,7 +1,7 @@
 version: 0.2
 
-env:
-  secrets-manager:
+#env:
+#  secrets-manager:
 
 phases:
   pre_build:
