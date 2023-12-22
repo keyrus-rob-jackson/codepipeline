@@ -10,14 +10,13 @@ phases:
       - echo $PATH
       - cat ~/.bashrc
       - source ~/.bashrc
-      - source set_path.sh
-      - ./set_path.sh
       - echo $PATH
       - echo $SHELL
       - whoami
       - pwd
       - composer update
       - composer install
+      - /root/.nvm/versions/node/v21.2.0/bin/npm use 21.2
       - npm i
   build:
     commands:
