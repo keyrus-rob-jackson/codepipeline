@@ -7,7 +7,9 @@ env:
 phases:
   install:
     commands:
+      - source ~/.bashrc
       - find ./
+      - echo $SHELL
       - whoami
       - pwd
       - composer update
