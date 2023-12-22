@@ -28,6 +28,9 @@ phases:
   post_build:
     commands:
       - echo "Post Build"
+      - apt install zip -y
       - zip -r app.zip .
 artifacts:
-  files: app.zip
+  files: 
+     - app.zip
+     - appspec.yml
