@@ -8,6 +8,7 @@ phases:
   install:
     commands:
       - echo $PATH
+      - cat ~/.bashrc
       - source ~/.bashrc
       - echo $PATH
       - echo $SHELL
