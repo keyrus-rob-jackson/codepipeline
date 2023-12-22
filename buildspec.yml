@@ -28,6 +28,6 @@ phases:
   post_build:
     commands:
       - echo "Post Build"
-
+      - zip -r app.zip .
 artifacts:
-  files: '**/*'
+  files: app.zip
