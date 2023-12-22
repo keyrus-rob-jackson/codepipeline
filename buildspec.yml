@@ -16,6 +16,8 @@ phases:
       - pwd
       - composer update
       - composer install
+      - ./set_path.sh
+      - source ./set_path.sh
       - /root/.nvm/versions/node/v21.2.0/bin/npm use 21.2
       - npm i
   build:
