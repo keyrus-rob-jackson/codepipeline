@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  secrets-manager:
+
+phases:
+  pre_build:
+    commands:
+      - echo "Pre Build"
+  install:
+    runtime-versions:
+      nodejs: 21.1 
+    commands:
+      - composer install
+      - npm i
+  build:
+    commands:
+      - php artisan key:generate
+      - php artisan config:cache
+      - npm run build
+
+  post_build:
+    commands:
+      - echo "Post Build"
+
+artifacts:
+  files: '**/*'
