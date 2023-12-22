@@ -7,8 +7,9 @@ env:
 phases:
   install:
     commands:
+      - echo $PATH
       - source ~/.bashrc
-      - find ./
+      - echo $PATH
       - echo $SHELL
       - whoami
       - pwd
