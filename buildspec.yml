@@ -1,6 +1,7 @@
 version: 0.2
 
-#env:
+env:
+  shell: bash
 #  secrets-manager:
 
 phases:
@@ -11,12 +12,12 @@ phases:
       - pwd
       - composer update
       - composer install
-      - /root/.nvm/versions/node/v21.2.0/bin/npm i
+      - npm i
   build:
     commands:
       - php artisan key:generate
       - php artisan config:cache
-      - /root/.nvm/versions/node/v21.2.0/bin/npm run build
+      - npm run build
 
   post_build:
     commands:
