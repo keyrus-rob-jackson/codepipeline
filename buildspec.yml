@@ -6,6 +6,7 @@ version: 0.2
 phases:
   install:
     commands:
+      - composer update
       - composer install
       - npm i
   build:
