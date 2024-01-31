@@ -35,7 +35,7 @@ jobs:
 
     - name: Set PHP version as environment variable
       id: php_version
-      run: echo "PHP_VERSION=$(php -v | head -n 1 | cut -d' ' -f2)" >> $GITHUB_ENV
+      run: ls -al /etc/php/; echo "PHP_VERSION=$(php -v | head -n 1 | cut -d' ' -f2| cut -d '-' -df1)" >> $GITHUB_ENV
 
     - name: Display PHP version
       run: echo "PHP version is $PHP_VERSION"
