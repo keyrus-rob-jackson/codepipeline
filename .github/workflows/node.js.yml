@@ -33,8 +33,11 @@ jobs:
     - name: Install packages
       run: sudo apt-get install composer nginx redis php-fpm php-xml php-curl php-zip php-intl php-mbstring php-pgsql php-pear php-dev libhiredis-dev -y
 
-    # - name: Install phpredis vi pecl
-    #   run: sudo pecl install redis
+    - name: Install phpredis vi pecl
+      run: sudo pecl install redis -y 
+
+    - name: Run composer
+      run: composer update; composer i
       
     # - run: npm ci
     # - run: npm run build --if-present
