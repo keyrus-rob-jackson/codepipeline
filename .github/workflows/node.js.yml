@@ -47,7 +47,7 @@ jobs:
       run: echo "extension=redis.so" | sudo tee -a /etc/php/$PHP_MAJOR_VERSION/cli/conf.d/20-redis.ini
 
 
-    -name: check extension 
+    - name: check extension 
       run: find /etc/php/$PHP_MAJOR_VERSION/ ; cat /etc/php/$PHP_MAJOR_VERSION/cli/conf.d/20-redis.ini
 
     - name: Install phpredis vi pecl
