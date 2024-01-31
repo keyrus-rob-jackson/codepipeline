@@ -49,12 +49,22 @@ jobs:
     # - name: check extension
     #   run: cat /etc/php/8.1/cli/php.ini
 
+    # This segfaults for unknown reason, added "|| true" to force exit 0
     - name: Install phpredis vi pecl
       run: sudo pecl install redis || true
 
     - name: Run composer
       run: composer update; composer i
       
+    - name: php key gen
+      run: php artisan key:generate
+
+
+    - name: Install npm modules
+      run: npm i
+
+    - name: NPM Build
+      run: npm run Build
     # - run: npm ci
     # - run: npm run build --if-present
     # - run: npm test
