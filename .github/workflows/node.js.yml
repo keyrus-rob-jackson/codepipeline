@@ -96,7 +96,7 @@ jobs:
         aws deploy create-deployment \
           --application-name app \
           --deployment-group-name app-deployment-group \
-          --s3-location bucket=your-s3-bucket,key=979706801997-pipeline-artifacts/github/${{vars.ENVIRONMENT}}/artifact.zip,bundleType=zip
+          --s3-location bucket=979706801997-pipeline-artifacts,key=github/${{vars.ENVIRONMENT}}/artifact.zip,bundleType=zip
 
 
     # - run: npm ci
