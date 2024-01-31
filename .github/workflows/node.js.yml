@@ -50,10 +50,10 @@ jobs:
     #   run: cat /etc/php/8.1/cli/php.ini
 
     - name: Install phpredis vi pecl
-      run: sudo pecl install redis ; echo "done"
+      run: echo | sudo pecl install redis
 
-    - name: Run composer
-      run: composer update; composer i
+    # - name: Run composer
+    #   run: composer update; composer i
       
     # - run: npm ci
     # - run: npm run build --if-present
