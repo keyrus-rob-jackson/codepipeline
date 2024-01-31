@@ -31,7 +31,7 @@ jobs:
       run: sudo apt-get update;
       
     - name: Install packages
-      run: apt-get install composer nginx redis php-fpm php-xml php-curl php-zip php-intl php-mbstring php-pgsql php-pear php-dev libhiredis-dev -y
+      run: sudo apt-get install composer nginx redis php-fpm php-xml php-curl php-zip php-intl php-mbstring php-pgsql php-pear php-dev libhiredis-dev -y
 
     # - name: Install phpredis vi pecl
     #   run: sudo pecl install redis
