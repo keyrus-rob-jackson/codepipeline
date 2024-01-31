@@ -87,9 +87,18 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-west-1
+        aws-region: us-east-1
     - name: Deploy to S3
       run: aws s3 cp app.zip s3://979706801997-pipeline-artifacts/github/${{vars.ENVIRONMENT}}/
+
+    - name: Deploy with AWS CodeDeploy
+      run: |
+        aws deploy create-deployment \
+          --application-name app \
+          --deployment-group-name app-deployment-group \
+          --s3-location bucket=your-s3-bucket,key=979706801997-pipeline-artifacts/github/${{vars.ENVIRONMENT}}/artifact.zip,bundleType=zip
+
+
     # - run: npm ci
     # - run: npm run build --if-present
     # - run: npm test
