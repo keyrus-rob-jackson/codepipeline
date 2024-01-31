@@ -64,7 +64,7 @@ jobs:
       run: npm i
 
     - name: NPM Build
-      run: npm run Build
+      run: npm run build
     # - run: npm ci
     # - run: npm run build --if-present
     # - run: npm test
