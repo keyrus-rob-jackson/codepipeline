@@ -44,11 +44,10 @@ jobs:
       run: echo "PHP major version is $PHP_MAJOR_VERSION" ; php -i | grep "Loaded Configuration File"
 
     - name: Install php extension
-      run: echo "extension=redis.so" | sudo tee -a /etc/php/$PHP_MAJOR_VERSION/cli/php.ini ; sudo systemctl restart php8.1-fpm.service #sudo service php{PHP_MAJOR-VERSION}-fpm restart
-
-
-    - name: check extension 
-       run: cat /etc/php/8.1/cli/php.ini
+      run: echo "extension=redis.so" | sudo tee -a /etc/php/$PHP_MAJOR_VERSION/cli/php.ini ; sudo systemctl restart php8.1-fpm.service
+      
+    - name: check extension
+      run: cat /etc/php/8.1/cli/php.ini
 
     - name: Install phpredis vi pecl
       run: sudo pecl install redis -y 
