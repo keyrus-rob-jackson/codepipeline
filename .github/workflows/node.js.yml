@@ -44,7 +44,7 @@ jobs:
       run: echo "PHP major version is $PHP_MAJOR_VERSION" ; php -i | grep "Loaded Configuration File"
 
     - name: Install php extension
-      run: echo "extension=redis.so" | sudo tee -a /etc/php/$PHP_MAJOR_VERSION/cli/php.ini ; systemctl; #sudo service php{PHP_MAJOR-VERSION}-fpm restart
+      run: echo "extension=redis.so" | sudo tee -a /etc/php/$PHP_MAJOR_VERSION/cli/php.ini ; sudo systemctl restart php8.1-fpm.service #sudo service php{PHP_MAJOR-VERSION}-fpm restart
 
 
     # - name: check extension 
