@@ -75,6 +75,9 @@ jobs:
     #   with:
     #     name: app.zip
     #     path: ./public
+    
+    - name: Copy appscpec
+      run: cp appspec.yml ./public
 
     - name: Zip file
       run: zip -r app.zip ./public
