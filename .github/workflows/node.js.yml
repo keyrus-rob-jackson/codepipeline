@@ -96,5 +96,5 @@ jobs:
         aws deploy create-deployment \
           --application-name app \
           --deployment-group-name app-deployment-group \
-          --s3-location bucket=979706801997-pipeline-artifacts,key=github/${{vars.ENVIRONMENT}}/artifact.zip,bundleType=zip
+          --s3-location bucket=979706801997-pipeline-artifacts,key=github/${{vars.ENVIRONMENT}}/app.zip,bundleType=zip
 
