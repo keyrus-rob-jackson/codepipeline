@@ -98,7 +98,3 @@ jobs:
           --deployment-group-name app-deployment-group \
           --s3-location bucket=979706801997-pipeline-artifacts,key=github/${{vars.ENVIRONMENT}}/artifact.zip,bundleType=zip
 
-
-    # - run: npm ci
-    # - run: npm run build --if-present
-    # - run: npm test
