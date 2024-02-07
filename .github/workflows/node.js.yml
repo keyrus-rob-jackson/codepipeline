@@ -83,6 +83,9 @@ jobs:
     - name: Copy appscpec
       run: cp appspec.yml  ./public
 
+    - name: Copy composer
+      run: cp composer.json  ./public
+
     - name: Zip file
       run: zip -r app.zip ./public
 
