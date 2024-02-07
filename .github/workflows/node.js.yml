@@ -1,5 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+# kick
 
 name: Build - Deploy AWS
 
@@ -60,7 +61,11 @@ jobs:
       run: sudo pecl install redis || true
 
     - name: Run composer
-      run: composer update; composer i
+      run: composer update ; cat composer.lock
+
+    - name: Run composer
+      run: composer i
+
       
     - name: php key gen
       run: php artisan key:generate
