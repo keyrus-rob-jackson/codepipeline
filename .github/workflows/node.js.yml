@@ -61,7 +61,7 @@ jobs:
       run: sudo pecl install redis || true
 
     - name: Run composer
-      run: composer i; composer update
+      run: composer i
 
       
     - name: php key gen
@@ -83,8 +83,8 @@ jobs:
     - name: Copy appscpec
       run: cp appspec.yml  ./public
 
-    - name: Copy composer
-      run: cp composer.lock  ./public
+   # - name: Copy composer
+   #   run: cp composer.lock  ./public
 
     - name: Zip file
       run: zip -r app.zip ./public
