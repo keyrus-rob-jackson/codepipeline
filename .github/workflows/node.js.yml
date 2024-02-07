@@ -84,7 +84,7 @@ jobs:
     #     path: ./public
     
     - name: Copy appscpec
-      run: cp appspec.yml ./public
+      run: cp appspec.yml composer.lock ./public
 
     - name: Zip file
       run: zip -r app.zip ./public
