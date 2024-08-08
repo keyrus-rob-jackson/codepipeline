@@ -10,7 +10,6 @@ pipeline {
                     userRemoteConfigs: [[url: 'https://github.com/keyrus-rob-jackson/codepipeline.git']]
                 ])
             }
-            }
         }
         stage('Build') {
             steps {
