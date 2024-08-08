@@ -6,25 +6,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from your repository
-                git 'https://github.com/your-repository.git'
+                git 'https://github.com/keyrus-rob-jackson/codepipeline.git'
             }
         }
         stage('Build') {
             steps {
                 // Commands to build your project
-                sh 'make build'
-            }
-        }
-        stage('Test') {
-            steps {
-                // Commands to test your project
-                sh 'make test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                // Commands to deploy your project
-                sh 'make deploy'
+                sh 'echo "HELLO WOLD"'
             }
         }
     }
