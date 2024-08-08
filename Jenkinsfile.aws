@@ -13,7 +13,6 @@ pipeline {
         }
         stage('Deploy to AWS CodeDeploy') {
             steps {
-                 withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID', credentialsId:'aws-key-edap-dev', secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
                 script {
                     sh '''
                     aws s3 ls s3://391711536806-deploy-scripts/
