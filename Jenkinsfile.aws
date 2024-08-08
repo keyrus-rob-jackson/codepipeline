@@ -18,8 +18,8 @@ pipeline {
                     aws s3 ls s3://391711536806-deploy-scripts/
                     '''
                     }
-                }
             }
+        }
     }
     post {
         always {
