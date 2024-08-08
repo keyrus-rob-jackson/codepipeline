@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'remote-agent-label' // Label of your remote agent
+        label 'jenkins-agent' // Label of your remote agent
     }
     stages {
         stage('Checkout') {
