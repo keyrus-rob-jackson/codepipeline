@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'jenkins-agent' // Label of your remote agent
+        label 'edap-aws-agent-dev'
     }
     stages {
         stage('Checkout') {
@@ -11,10 +11,15 @@ pipeline {
                 ])
             }
         }
-        stage('Build') {
+        stage('Deploy to AWS CodeDeploy') {
             steps {
-                // Commands to build your project
-                sh 'echo "HELLO WOLD"'
+                 withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID', credentialsId:'aws-key-edap-dev', secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
+                script {
+                    sh '''
+                    aws s3 ls s3://391711536806-deploy-scripts/
+                    '''
+                    }
+                }
             }
         }
     }
