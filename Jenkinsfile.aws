@@ -5,8 +5,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout code from your repository
-                git 'https://github.com/keyrus-rob-jackson/codepipeline.git'
+                checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[url: 'https://github.com/keyrus-rob-jackson/codepipeline.git']]
+                ])
+            }
             }
         }
         stage('Build') {
